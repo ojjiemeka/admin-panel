@@ -5,7 +5,8 @@ import misc_avatar from "../../styles/img/misc/avatar_small.png"
 import dashboard from "../../styles/img/icons/packs/fugue/16x16/dashboard.png"
 import list from "../../styles/img/icons/packs/fugue/16x16/clipboard-list.png"
 import notification from "../../styles/img/icons/packs/fugue/16x16/application--exclamation.png"
-import sidebar from "../../modules/sidebar/sidebar";
+import Sidebar from "../../modules/sidebar/Sidebar";
+
 const Dashboard = () => {
   return (
     <>
@@ -251,6 +252,7 @@ const Dashboard = () => {
         </div>
         <div class="fix-shadow-bottom-height"></div>
        
+       <Sidebar/>
        
 
         <div id="main" role="main">

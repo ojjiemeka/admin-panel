@@ -4,9 +4,10 @@ import dashboard from "../../styles/img/icons/packs/fugue/16x16/dashboard.png"
 import list from "../../styles/img/icons/packs/fugue/16x16/clipboard-list.png"
 import notification from "../../styles/img/icons/packs/fugue/16x16/application--exclamation.png"
 
-const sidebar = () => {
+const Sidebar = () => {
   return (
-    <aside id="sidebar">
+    <div>
+       <aside id="sidebar">
     <div id="search-bar">
       <form
         id="search-form"
@@ -88,7 +89,8 @@ const sidebar = () => {
       </ul>
     </nav>
   </aside>
+    </div>
   )
 }
 
-export default sidebar
+export default Sidebar
