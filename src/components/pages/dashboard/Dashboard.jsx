@@ -1,473 +1,381 @@
 import React from "react";
-import logo from "../../styles/img/logo.png"
-import mail from '../../styles/img/icons/packs/fugue/16x16/mail.png'
-import misc_avatar from "../../styles/img/misc/avatar_small.png"
-import dashboard from "../../styles/img/icons/packs/fugue/16x16/dashboard.png"
-import list from "../../styles/img/icons/packs/fugue/16x16/clipboard-list.png"
-import notification from "../../styles/img/icons/packs/fugue/16x16/application--exclamation.png"
-import Sidebar from "../../modules/sidebar/Sidebar";
+// import DashboardMenu from "../modules/dashboardMenu";
+// import QuickMenu from "../modules/quickMenu";
 
 const Dashboard = () => {
   return (
     <>
-      <div id="container">
-        <div id="header-surround">
-          <header id="header">
-            <img src={logo} alt="Grape" class="logo" />
-            <div class="divider-header divider-vertical"></div>
-            <a
-              href="/#"
-              onclick="$('#info-dialog').dialog({ modal: true });">
-              <span class="btn-info"></span>
-            </a>
-            <div id="info-dialog" title="About" style={{ display: 'none' }}>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-            </div>
-            <ul class="toolbox-header">
-              <li>
-                <a
-                  rel="tooltip"
-                  title="Create a User"
-                  class="toolbox-action"
-                  href="/#">
-                  <span class="i-24-user-business"></span>
-                </a>
-                <div class="toolbox-content">
-                  <div class="block-border">
-                    <div class="block-header small">
-                      <h1>Create a User</h1>
-                    </div>
-                    <form
-                      id="create-user-form"
-                      class="block-content form"
-                      action="#"
-                      method="post">
-                      <div class="_100">
-                        <p>
-                          <label for="username">Username</label>
-                          <input
-                            id="username"
-                            name="username"
-                            class="required"
-                            type="text"
-                            value=""
-                          />
-                        </p>
-                      </div>
-                      <div class="_50">
-                        <p class="no-top-margin">
-                          <label for="firstname">Firstname</label>
-                          <input
-                            id="firstname"
-                            name="firstname"
-                            class="required"
-                            type="text"
-                            value=""
-                          />
-                        </p>
-                      </div>
-                      <div class="_50">
-                        <p class="no-top-margin">
-                          <label for="lastname">Lastname</label>
-                          <input
-                            id="lastname"
-                            name="lastname"
-                            class="required"
-                            type="text"
-                            value=""
-                          />
-                        </p>
-                      </div>
-                      <div class="clear"></div>
-                      <div class="block-actions">
-                        <ul class="actions-left">
-                          <li>
-                            <a
-                              class="close-toolbox button red"
-                              id="reset"
-                              href="/#">
-                              Cancel
-                            </a>
-                          </li>
-                        </ul>
-                        <ul class="actions-right">
-                          <li>
-                            <input
-                              type="submit"
-                              class="button"
-                              value="Create the User"
-                            />
-                          </li>
-                        </ul>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <a
-                  rel="tooltip"
-                  title="Write a Message"
-                  class="toolbox-action"
-                  href="/#">
-                  <span class="i-24-inbox-document"></span>
-                </a>
-                <div class="toolbox-content">
-                  <div class="block-border">
-                    <div class="block-header small">
-                      <h1>Write a Message</h1>
-                    </div>
-                    <form
-                      id="write-message-form"
-                      class="block-content form"
-                      action="#"
-                      method="post">
-                      <p class="inline-mini-label">
-                        <label for="recipient">Recipient</label>
-                        <input type="text" name="recipient" class="required" />
-                      </p>
-                      <p class="inline-mini-label">
-                        <label for="subject">Subject</label>
-                        <input type="text" name="subject" />
-                      </p>{" "}
-                      <div class="_100">
-                        <p class="no-top-margin">
-                          <label for="message">Message</label>
-                          <textarea
-                            id="message"
-                            name="message"
-                            class="required"
-                            rows="5"
-                            cols="40"></textarea>
-                        </p>
-                      </div>
-                      <div class="clear"></div>
-                      <div class="block-actions">
-                        <ul class="actions-left">
-                          <li>
-                            <a
-                              class="close-toolbox button red"
-                              id="reset2"
-                              href="/#">
-                              Cancel
-                            </a>
-                          </li>
-                        </ul>
-                        <ul class="actions-right">
-                          <li>
-                            <input
-                              type="submit"
-                              class="button"
-                              value="Send Message"
-                            />
-                          </li>
-                        </ul>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <a
-                  rel="tooltip"
-                  title="Create a Folder"
-                  class="toolbox-action"
-                  href="/#">
-                  <span class="i-24-folder-horizontal-open"></span>
-                </a>
-                <div class="toolbox-content">
-                  <div class="block-border">
-                    <div class="block-header small">
-                      <h1>Create a Folder</h1>
-                    </div>
-                    <form
-                      id="create-folder-form"
-                      class="block-content form"
-                      action="#"
-                      method="post">
-                      <p class="inline-mini-label">
-                        <label for="folder-name">Name</label>
-                        <input
-                          type="text"
-                          name="folder-name"
-                          class="required"
-                        />
-                      </p>{" "}
-                      <div class="block-actions">
-                        <ul class="actions-left">
-                          <li>
-                            <a
-                              class="close-toolbox button red"
-                              id="reset3"
-                              href="/#">
-                              Cancel
-                            </a>
-                          </li>
-                        </ul>
-                        <ul class="actions-right">
-                          <li>
-                            <input
-                              type="submit"
-                              class="button"
-                              value="Create Folder"
-                            />
-                          </li>
-                        </ul>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <div id="user-info">
-              <p>
-                <span class="messages">
-                  Hello
-                  <a href="/#">Administrator</a> (
-                  <a href="/#">
-                    <img
-                      src={mail}
-                      alt="Messages"
-                    />
-                    3 new messages
-                  </a>{" "}
-                  )
-                </span>
-                <a href="/#" class="toolbox-action button">
-                  Settings
-                </a>
-                <a href="/#" class="button red">
-                  Logout
-                </a>
-              </p>
-            </div>
-          </header>
-        </div>
-        <div class="fix-shadow-bottom-height"></div>
-       
-       <Sidebar/>
-       
+      <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+           
+  
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                    <h4 class="mb-sm-0 font-size-18">Horizontal Layout</h4>
 
-        <div id="main" role="main">
-          <div id="title-bar">
-            <ul id="breadcrumbs">
-              <li>
-                <a href="dashboard.html" title="Home">
-                  <span id="bc-home"></span>
-                </a>
-              </li>
-              <li class="no-hover">Dashboard</li>
-            </ul>
-          </div>
-          <div class="shadow-bottom shadow-titlebar"></div>
-          <div id="main-content">
-            <div class="container_12">
-              <div class="grid_12">
-                <h1>Dashboard</h1>
-                <p>Here you have a quick overview of some features</p>
-                <div class="alert info">
-                  <span class="hide">x</span>
-                  <strong>
-                    Hey there! Welcome to the professional and flexible admin
-                    template &quot;Grape&quot;. I hope you enjoy your stay and
-                    please make sure, that you visit the other pages.
-                  </strong>
-                </div>
-              </div>
-              <div class="grid_12">
-                <div class="block-border">
-                  <div class="block-content">
-                    <ul class="shortcut-list">
-                      <li>
-                        <a href="/#">
-                          <img src="img/icons/packs/crystal/48x48/apps/kedit.png" />{" "}
-                          Write an Article
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/#">
-                          <img src="img/icons/packs/crystal/48x48/apps/penguin.png" />{" "}
-                          User Manager
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/#">
-                          <img src="img/icons/packs/crystal/48x48/apps/wifi.png" />{" "}
-                          Control Monitor
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/#">
-                          <img src="img/icons/packs/crystal/48x48/apps/mailreminder.png" />{" "}
-                          Check the Mails
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/#">
-                          <img src="img/icons/packs/crystal/48x48/apps/Volume%20Manager.png" />{" "}
-                          Statistics
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/#">
-                          <img src="img/icons/packs/crystal/48x48/apps/terminal.png" />{" "}
-                          Manage Console
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/#">
-                          <img src="img/icons/packs/crystal/48x48/apps/knotes.png" />{" "}
-                          Notes
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/#">
-                          <img src="img/icons/packs/crystal/48x48/apps/kview.png" />{" "}
-                          Manage Images
-                        </a>
-                      </li>
-                    </ul>
-                    <div class="clear"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="grid_4">
-                <div class="block-border">
-                  <div class="block-header">
-                    <h1>Create a Blogpost</h1>
-                    <span></span>
-                  </div>
-                  <form
-                    id="validate-form"
-                    class="block-content form"
-                    action="https://envato.stammtec.de/themeforest/grape/dashboard.html"
-                    method="post">
-                    <p class="inline-mini-label">
-                      <label for="title">Title</label>
-                      <input type="text" name="title" class="required" />
-                    </p>
-                    <p class="inline-mini-label">
-                      <label for="category">Category</label>
-                      <select name="category" id="category">
-                        <option>Lorem Ipsum</option>
-                        <option>Consetetur Sadipscing</option>
-                        <option>Eirmod Tempor</option>
-                      </select>
-                    </p>
-                    <p class="inline-mini-label">
-                      <label for="post">Post</label>
-                      <textarea
-                        id="post"
-                        name="post"
-                        class="required"
-                        rows="5"
-                        cols="40"></textarea>
-                    </p>
-                    <div class="clear"></div>
-                    <div class="block-actions">
-                      <ul class="actions-left">
-                        <li>
-                          <a
-                            class="button red"
-                            id="reset-validate-form"
-                            href="/#">
-                            Cancel
-                          </a>
-                        </li>
-                      </ul>
-                      <ul class="actions-right">
-                        <li>
-                          <input
-                            type="submit"
-                            class="button"
-                            value="Create Post"
-                          />
-                        </li>
-                      </ul>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="grid_4">
-                <div class="block-border">
-                  <div class="block-header">
-                    <h1>What you should do</h1>
-                    <span></span>
-                  </div>
-                  <div class="block-content">
-                    <ul class="block-list with-icon">
-                      <li class="i-16-calendar">Lorem ipsum</li>
-                      <li class="i-16-application">Lorem ipsum</li>
-                      <li class="i-16-balloon">Lorem ipsum</li>
-                      <li class="i-16-chart">Lorem ipsum</li>
-                      <li class="i-16-drive">Lorem ipsum</li>
-                    </ul>
-                  </div>
-                  <div class="block-content dark-bg">
-                    <p>
-                      Visit the
-                      <a href="list_block.html">Block List</a>
-                      page to see the other types of block lists.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class='"grid_4"'>
-                <div class="block-border">
-                  <div class="block-header">
-                    <h1>Overview-List</h1>
-                    <span></span>
-                  </div>
-                  <div class="block-content">
-                    <div class="alert info no-margin top">
-                      You have 12 new support tickets.
-                    </div>
-                    <ul class="overview-list">
-                      <li>
-                        <a href="/#">
-                          <span>8262</span>
-                          Total Visits
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/#">
-                          <span>521</span> Today Visits
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/#">
-                          <span>257</span> Comments
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/#">
-                          <span>42</span> Support Tickets
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="clear height-fix"></div>
-            </div>
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="/#">Layouts</a></li>
+                                            <li class="breadcrumb-item active">Horizontal Layout</li>
+                                        </ol>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                      
+
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <div class="card overflow-hidden">
+                                    <div class="bg-primary-subtle">
+                                        <div class="row">
+                                            <div class="col-7">
+                                                <div class="text-primary p-3">
+                                                    <h5 class="text-primary">Welcome Back !</h5>
+                                                    <p>Skote Dashboard</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-5 align-self-end">
+                                                <img src="assets/images/profile-img.png" alt="" class="img-fluid"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body pt-0">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="avatar-md profile-user-wid mb-4">
+                                                    <img src="assets/images/users/avatar-1.jpg" alt="" class="img-thumbnail rounded-circle"/>
+                                                </div>
+                                                <h5 class="font-size-15 text-truncate">Henry Price</h5>
+                                                <p class="text-muted mb-0 text-truncate">UI/UX Designer</p>
+                                            </div>
+
+                                            <div class="col-sm-8">
+                                                <div class="pt-4">
+
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h5 class="font-size-15">125</h5>
+                                                            <p class="text-muted mb-0">Projects</p>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <h5 class="font-size-15">$1245</h5>
+                                                            <p class="text-muted mb-0">Revenue</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-4">
+                                                        <a href="/#" class="btn btn-primary waves-effect waves-light btn-sm">View Profile <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4">Monthly Earning</h4>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <p class="text-muted">This month</p>
+                                                <h3>$34,252</h3>
+                                                <p class="text-muted"><span class="text-success me-2"> 12% <i class="mdi mdi-arrow-up"></i> </span> From previous period</p>
+
+                                                <div class="mt-4">
+                                                    <a href="/#" class="btn btn-primary waves-effect waves-light btn-sm">View More <i class="mdi mdi-arrow-right ms-1"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="mt-4 mt-sm-0">
+                                                    <div id="radialBar-chart" data-colors='["--bs-primary"]' class="apex-charts"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-muted mb-0">We craft digital, graphic and dimensional thinking.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-8">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card mini-stats-wid">
+                                            <div class="card-body">
+                                                <div class="d-flex">
+                                                    <div class="flex-grow-1">
+                                                        <p class="text-muted fw-medium">Orders</p>
+                                                        <h4 class="mb-0">1,235</h4>
+                                                    </div>
+
+                                                    <div class="flex-shrink-0 align-self-center">
+                                                        <div class="mini-stat-icon avatar-sm rounded-circle bg-primary">
+                                                            <span class="avatar-title">
+                                                                <i class="bx bx-copy-alt font-size-24"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card mini-stats-wid">
+                                            <div class="card-body">
+                                                <div class="d-flex">
+                                                    <div class="flex-grow-1">
+                                                        <p class="text-muted fw-medium">Revenue</p>
+                                                        <h4 class="mb-0">$35, 723</h4>
+                                                    </div>
+
+                                                    <div class="flex-shrink-0 align-self-center">
+                                                        <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
+                                                            <span class="avatar-title rounded-circle bg-primary">
+                                                                <i class="bx bx-archive-in font-size-24"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card mini-stats-wid">
+                                            <div class="card-body">
+                                                <div class="d-flex">
+                                                    <div class="flex-grow-1">
+                                                        <p class="text-muted fw-medium">Average Price</p>
+                                                        <h4 class="mb-0">$16.2</h4>
+                                                    </div>
+
+                                                    <div class="flex-shrink-0 align-self-center">
+                                                        <div class="avatar-sm rounded-circle bg-primary mini-stat-icon">
+                                                            <span class="avatar-title rounded-circle bg-primary">
+                                                                <i class="bx bx-purchase-tag-alt font-size-24"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-sm-flex flex-wrap">
+                                            <h4 class="card-title mb-4">Email Sent</h4>
+                                            <div class="ms-auto">
+                                                <ul class="nav nav-pills">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="/#">Week</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="/#">Month</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" href="/#">Year</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div id="stacked-column-chart" data-colors='["--bs-primary", "--bs-warning", "--bs-success"]' class="apex-charts" dir="ltr"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4">Social Source</h4>
+                                        <div class="text-center">
+                                            <div class="avatar-sm mx-auto mb-4">
+                                                <span class="avatar-title rounded-circle bg-primary-subtle font-size-24">
+                                                        <i class="mdi mdi-facebook text-primary"></i>
+                                                    </span>
+                                            </div>
+                                            <p class="font-16 text-muted mb-2"></p>
+                                            <h5><a href="/#" class="text-dark">Facebook - <span class="text-muted font-16">125 sales</span> </a></h5>
+                                            <p class="text-muted">Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus tincidunt.</p>
+                                            <a href="/#" class="text-primary font-16">Learn more <i class="mdi mdi-chevron-right"></i></a>
+                                        </div>
+                                        <div class="row mt-4">
+                                            <div class="col-4">
+                                                <div class="social-source text-center mt-3">
+                                                    <div class="avatar-xs mx-auto mb-3">
+                                                        <span class="avatar-title rounded-circle bg-primary font-size-16">
+                                                                <i class="mdi mdi-facebook text-white"></i>
+                                                            </span>
+                                                    </div>
+                                                    <h5 class="font-size-15">Facebook</h5>
+                                                    <p class="text-muted mb-0">125 sales</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="social-source text-center mt-3">
+                                                    <div class="avatar-xs mx-auto mb-3">
+                                                        <span class="avatar-title rounded-circle bg-info font-size-16">
+                                                                <i class="mdi mdi-twitter text-white"></i>
+                                                            </span>
+                                                    </div>
+                                                    <h5 class="font-size-15">Twitter</h5>
+                                                    <p class="text-muted mb-0">112 sales</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="social-source text-center mt-3">
+                                                    <div class="avatar-xs mx-auto mb-3">
+                                                        <span class="avatar-title rounded-circle bg-pink font-size-16">
+                                                                <i class="mdi mdi-instagram text-white"></i>
+                                                            </span>
+                                                    </div>
+                                                    <h5 class="font-size-15">Instagram</h5>
+                                                    <p class="text-muted mb-0">104 sales</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-5">Activity</h4>
+                                        <ul class="verti-timeline list-unstyled">
+                                            <li class="event-list">
+                                                <div class="event-timeline-dot">
+                                                    <i class="bx bx-right-arrow-circle font-size-18"></i>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <h5 class="font-size-14">22 Nov <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i></h5>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <div>
+                                                            Responded to need “Volunteer Activities
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="event-list">
+                                                <div class="event-timeline-dot">
+                                                    <i class="bx bx-right-arrow-circle font-size-18"></i>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <h5 class="font-size-14">17 Nov <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i></h5>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <div>
+                                                            Everyone realizes why a new common language would be desirable... <a href="/#">Read more</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="event-list active">
+                                                <div class="event-timeline-dot">
+                                                    <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <h5 class="font-size-14">15 Nov <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i></h5>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <div>
+                                                            Joined the group “Boardsmanship Forum”
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="event-list">
+                                                <div class="event-timeline-dot">
+                                                    <i class="bx bx-right-arrow-circle font-size-18"></i>
+                                                </div>
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <h5 class="font-size-14">12 Nov <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i></h5>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <div>
+                                                            Responded to need “In-Kind Opportunity”
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="text-center mt-4"><a href="/#" class="btn btn-primary waves-effect waves-light btn-sm">View More <i class="mdi mdi-arrow-right ms-1"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4">Top Cities Selling Product</h4>
+
+                                        <div class="text-center">
+                                            <div class="mb-4">
+                                                <i class="bx bx-map-pin text-primary display-4"></i>
+                                            </div>
+                                            <h3>1,456</h3>
+                                            <p>San Francisco</p>
+                                        </div>
+
+                                        <div class="table-responsive mt-4">
+                                            <table class="table align-middle table-nowrap">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style={{width: '30%'}}>
+                                                            <p class="mb-0">San Francisco</p>
+                                                        </td>
+                                                        <td style={{width:' 25%'}}>
+                                                            <h5 class="mb-0">1,456</h5></td>
+                                                        <td>
+                                                            <div class="progress bg-transparent progress-sm">
+                                                                <div class="progress-bar bg-primary rounded" role="progressbar" style={{width: '94%'}} aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p class="mb-0">Los Angeles</p>
+                                                        </td>
+                                                        <td>
+                                                            <h5 class="mb-0">1,123</h5>
+                                                        </td>
+                                                        <td>
+                                                            <div class="progress bg-transparent progress-sm">
+                                                                <div class="progress-bar bg-success rounded" role="progressbar" style={{width: '82%'}} aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p class="mb-0">San Diego</p>
+                                                        </td>
+                                                        <td>
+                                                            <h5 class="mb-0">1,026</h5>
+                                                        </td>
+                                                        <td>
+                                                            <div class="progress bg-transparent progress-sm">
+                                                                <div class="progress-bar bg-warning rounded" role="progressbar" style={{width: '70%'}} aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
           </div>
         </div>
-        <footer id="footer">
-          <div class="container_12">
-            <div class="grid_12">
-              <div class="footer-icon align-center">
-                <a class="top" href="/#top"></a>
-              </div>
-            </div>
-          </div>
-        </footer>
       </div>
     </>
   );
